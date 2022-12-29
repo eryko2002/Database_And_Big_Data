@@ -1,0 +1,69 @@
+.bottom-bar{
+    color:white;
+    height: 80px;
+    left: 0;
+    right:0;
+    position:absolute;
+    bottom: 0;
+    margin-top: 1550px;
+    margin-bottom: 0;
+    background-color: #4e480a;
+    background-image: url("https://assets-global.website-files.com/5ade410fa6b645228369918f/5adf82cc388ed6058841468f_zebra-pattern-stripes-only.svg");
+    background-size: 432px 432px;
+}
+.middle-section-bottom{
+    align-items: center;
+    align-content: center;
+    color:black;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    left: 400px;
+    right: 400px;
+    top: 0;
+    bottom: 0;
+}
+.left-section-bottom{
+    width: 400px;
+    bottom: 0;
+    color:white;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color:white;
+
+}
+.right-section-bottom{
+    width: 400px;
+    bottom: 0;
+    color:white;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.chat-button{
+    background-color: #B98F23;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: lighter;
+    font-size: 18px;
+    border-radius: 15px;
+    margin-left: 8px;
+    width: 120px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    right:30%;
+    bottom: 30%;
+    position:absolute;
+}

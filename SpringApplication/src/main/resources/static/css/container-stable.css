@@ -1,0 +1,34 @@
+.container-stable{
+    margin-top: 152px;
+    width: 100%;
+    position: relative;
+}
+.container-inform1{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 50px 50px 50px 50px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-top: 1px solid #fff;
+    background-color: #bb6500;
+    background-image: url("https://assets-global.website-files.com/5ade410fa6b645228369918f/5adf82cc388ed6058841468f_zebra-pattern-stripes-only.svg");
+    background-size: 432px;
+    background-repeat: repeat;
+    color: #bb6500;
+}
+
