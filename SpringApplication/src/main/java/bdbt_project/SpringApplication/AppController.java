@@ -13,12 +13,14 @@ import javax.servlet.http.HttpServletRequest;
 public class AppController implements WebMvcConfigurer {
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/index").setViewName("index");
-        registry.addViewController("/").setViewName("index");
+        registry.addViewController("/").setViewName("index1");
         registry.addViewController("/main").setViewName("main");
         registry.addViewController("/login").setViewName("login");
 
         registry.addViewController("/main_admin").setViewName("admin/main_admin");
         registry.addViewController("/main_user").setViewName("user/main_user");
+        registry.addViewController("/eglab").setViewName("admin/main_admin");
+
     }
 
     @Controller
@@ -32,11 +34,16 @@ public class AppController implements WebMvcConfigurer {
             (request.isUserInRole
                     ("ADMIN")) {
                 return "redirect:/main_admin";
-            } else if
+            }if
             (request.isUserInRole
                             ("USER")) {
                 return "redirect:/main_user";
-            } else {
+            }if
+            (request.isUserInRole
+                            ("Employee")) {
+                return "redirect:/eglab";
+            }
+            else {
                 return "redirect:/index";
             }
         }
@@ -51,4 +58,14 @@ public class AppController implements WebMvcConfigurer {
     public String showUserPage(Model model) {
         return "user/main_user";
     }
+    @RequestMapping(value = {"/eglab"})
+    public String showAdminPage1(Model model) {
+        return "admin/main_admin";
+    }
+
+
+
+
 }
+
+

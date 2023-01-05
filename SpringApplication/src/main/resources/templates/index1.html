@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Application</title>
+</head>
+<body>
+<div align="center">
+    <h1>Adresy Records</h1>
+
+    <a href="/new"> Enter new adres</a>
+
+
+    <!-- Table -->
+    <table border="1" cellpadding="10">
+
+        <!-- Table header -->
+        <thead>
+        <!-- Table body -->
+        <tr>
+            <th>ID</th>
+            <th>Miasto</th>
+            <th>Ulica</th>
+            <th>Kod pocztowy</th>
+            <th>Nr mieszkania</th>
+            <th>Nr lokalu</th>
+
+
+
+        </tr>
+        </thead>
+
+
+        <!-- Table body -->
+        <tbody>
+
+        <tr th:each="adres:${listAdresy}">
+
+            <td th:text="${adres.id_adresu}">ID</td>
+            <td th:text = "${adres.miasto}">Miasto</td>
+            <td th:text = "${adres.ulica}">Ulica</td>
+            <td th:text = "${adres.kod_pocztowy}">Kod pocztowy</td>
+            <td th:text = "${adres.nr_mieszkania}">Nr mieszkania</td>
+            <td th:text = "${adres.nr_lokalu}">Nr lokalu</td>
+        </tr>
+
+        </tbody>
+    </table>
+
+</div>
+</body>
+<script th:src="@{C:/Users/eryko/Desktop/PW_BDBT1/bdbt_projekt/SpringApplication/src/main/java/bdbt_proj/AdresyDAO.java}"></script>
+<script th:src="@{/main/java/bdbt_proj/AppController}"></script>
+</html>

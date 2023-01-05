@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Login Page</title>
+    <style>
+        .bar-top{
+            background-color: #ba8f00;
+            background-image: url("https://assets-global.website-files.com/5ade410fa6b645228369918f/5adf82cc388ed6058841468f_zebra-pattern-stripes-only.svg");
+            background-size: 432px 432px;
+            color: white;
+            height: 100px;width: 100%;
+            border-bottom: 10px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        .body-bar{
+            border-radius:10px;
+            position:absolute;
+            background-color: lightgray;
+            background-image: url("https://assets-global.website-files.com/5ade410fa6b645228369918f/5adf82cc388ed6058841468f_zebra-pattern-stripes-only.svg");
+            background-size: 432px 432px;
+            color: white;
+            width: 100%;
+            top: 0;
+            border-top: 10px;
+            height: 300px;
+        }
+
+        .box{
+            position: relative;
+            width: 400px;
+            height: 500px;
+            border-radius: 20px;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+            top: 20px;
+        }
+        .box::before{
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background-image: conic-gradient(transparent,transparent,transparent,#ba8f00);
+            animation: rotate 4s linear infinite;
+            animation-delay: -4s;
+        }
+        .box::after{
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background-image: conic-gradient(transparent,transparent,transparent,rebeccapurple);
+            animation: rotate 4s linear infinite;
+            animation-delay: -2s;
+        }
+        .box span{
+            position: absolute;
+            inset: 5px;
+            border-radius: 20px;
+            background-color: white;
+            z-index: 2;
+        }
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes rotate1 {
+            0% {
+                transform: rotate(360deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link rel="stylesheet" href="../static/css/login/peekBar.css">
+</head>
+<body class="body-bar">
+
+<!-- Navigation -->
+
+
+<!-- Górny pasek -->
+<nav class="navbar navbar-expand-lg bar-top">
+    <div style="flex: 1;bottom: 0;left: 0">
+        <a style="color: white;font-size: 25px;font-family: 'Berlin Sans FB'" class="navbar-brand" href="/">Warszawa Zoo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+
+    <div style="flex: 1;bottom: 0;right: 0;height: 100px;margin-top: 50px">
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+
+                <li style="height: 40px;width: 60px;background-color: goldenrod;color:white;border-radius: 10px;text-align: center;margin-right: 3px" class="nav-item">
+                    <a style="color: white" class="nav-link" th:href="@{/index} ">Home</a>
+                </li>
+
+                <li class="nav-item active" style="height: 40px;width: 60px;background-color: goldenrod;color: white;border-radius: 10px;text-align: center">
+                    <a style="color: white" class="nav-link" href="#">Login
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Koniec górnego paska -->
+
+<!-- Pole logowania -->
+<div>
+    <div class="box" style="
+    margin-left: 750px;margin-top: 30px;color: black;display: flex;flex-direction: row">
+        <span>
+            <form method="post" th:action="@{/login}">
+                <div style="margin-bottom:20px;left: 0;right: 0;top: 0;height: 80px;border-radius:20px;background-color: white;color: black;
+display:grid;grid-template-columns: 1fr">
+            <div style="font-family: 'Segoe MDL2 Assets';font-size: 30px;margin-top: 20px;margin-left: 100px">
+                Pole logowania
+            </div>
+            <div th:if="${param.error}" style="margin-top:15px;text-align:center;color:red; margin-bottom:15px">
+                    Błędna nazwa użytkownika lub hasło!
+            </div>
+        </div>
+
+        <div style="margin-top: 30px;left: 0;right: 0;height: 100px;background-color: white;color: black;
+display:grid;grid-template-columns: 1fr"> <div>
+            <label style="margin-left: 10px" for="Nazwa użytkownika">Login:</label>
+                    <input style="background-color: lightgray;width:95%;margin-left: 10px" id="Nazwa użytkownika" type="text" placeholder="Nazwa użytkownika" autocomplete="off" class="form-control" name="username"/>
+        </div>
+
+        <div style="margin-top:0;left: 0;right: 0;height: 100px;background-color: white;color: black;
+display:grid;grid-template-columns: 1fr"> <div>
+             <label style="margin-left: 10px" for="Hasło">Hasło:</label>
+                    <input style="background-color: lightgray;width:95%;margin-left: 10px" id="Hasło" type="password" placeholder="Hasło" autocomplete="off" class="form-control" name="password"/>
+            </div>
+        </div>
+
+        <div style="left: 0;right: 0;height: 60px;background-color: white;color: white;
+display:grid;grid-template-columns: 1fr 1fr ">
+            <div style="margin-left: 10px;color: black">
+      <input type="checkbox" id="Zapamiętaj mnie" name="Zapamiętaj mnie" checked>
+      <label for="Zapamiętaj mnie">Zapamiętaj mnie</label>
+            </div>
+            <a href="" target="_blank" rel="noopener noreferrer">
+                     <div style="text-decoration: underline;color: black;text-align: right;margin-right: 10px">
+                     Odzyskaj hasło
+                     </div>
+            </a>
+        </div>
+
+                    <div style="height: 80px;background-color: white;width:95%;margin-left: 10px;
+display:grid;grid-template-columns: 1fr">
+            <button style="background-color: #bb6500;color: white;border-radius: 15px;cursor: pointer;border-color: white;border-width: 2px" type="submit" value="Sign In">Zaloguj się</button>
+        </div>
+
+        </div>
+            </form>
+        </span>
+    </div>
+</div>
+
+<!-- Koniec pola logowania-->
+
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+</body>
+</html>

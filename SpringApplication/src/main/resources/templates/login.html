@@ -1,76 +1,66 @@
-<!DOCTYPE HTML>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<script src="index1.html"/>
 <head>
-    <meta charset="UTF-8"/>
-    <title>Login Page</title>
-
-    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
-
+    <meta charset="UTF-8">
+    <title>Spring Application</title>
 </head>
 <body>
-
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-        <a class="navbar-brand" href="/">BDBT Spring Boot Project - Part II</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/index}">Home</a>
-                </li>
-
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Login
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-
-            </ul>
-        </div>
-    </div>
-</nav>
+<div align="center">
+    <h1>Enter new adres</h1>
 
 
-<div class="container">
+    <!-- end line new line -->
+    <br/>
+    
 
-    <div class="row">
-        <div class="col-md-4 mt-5">
+    <form action="#" th:action="@{/save}" th:object="${templates}" method="post">
+        <!-- Table -->
+        <table border="1" cellpadding="10">
 
-            <form method="post" th:action="@{/login}">
+            <tr>
+                <td>ID</td>
+                <td>
+                <input type="text" th:field="${id_adresu}"> </td>
+            </tr>
+            <tr>
+                <td>Miasto</td>
+                <td> <input type="text" th:field="*{miasto}"> </td>
+            </tr>
 
-                <div class="form-group">
-                    <label for="login">Login:</label>
-                    <input id="login" type="text" placeholder="Enter login" autocomplete="off" class="form-control" name="username"/>
-                </div>
+            <tr>
+                <td>Ulica</td>
+                <td> <input type="text" th:field="*{ulica}"> </td>
+            </tr>
 
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input id="password" type="password" placeholder="Enter your password" autocomplete="off" class="form-control" name="password"/>
-                </div>
+            <tr>
+                <td>Kod pocztowy</td>
+                <td> <input type="text" th:field="*{kod_pocztowy}"> </td>
+            </tr>
 
-                <div th:if="${param.error}" style="color:red; margin-bottom:15px">
-                    ERROR: Invalid username or password!
-                </div>
+            <tr>
+                <td>Nr mieszkania</td>
+                <td> <input type="text" th:field="*{nr_mieszkania}"> </td>
+            </tr>
 
-                <button class="btn btn-primary" type="submit" value="Sign In">Login</button>
-            </form>
+            <tr>
+                <td>Nr lokalu</td>
+                <td> <input type="text" th:field="*{nr_lokalu}"> </td>
+            </tr>
+
+            <!-- button save -->
+            <tr>
+                <td colspan="2"><button type="submit">Save </button></td>
+
+
+            </tr>
+
+        </table>
 
 
 
-        </div>
-    </div>
+    </form>
 </div>
-
-
-<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
-<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
-<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-
 </body>
 </html>

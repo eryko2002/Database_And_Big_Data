@@ -6,30 +6,47 @@
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
 </head>
 <body>
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-        <a class="navbar-brand" href="/">BDBT Spring Boot Project - Part II</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+
+<div style="display: grid;grid-template-columns: 1fr">
+    <div style="margin-top:150px;height: 800px;text-align: center;font-size: 225px;
+font-family: kanit,sans-serif;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    font-weight: 200;
+    background: linear-gradient(130deg,firebrick,red);
+    color: transparent;
+    -webkit-background-clip: text;
+    text-transform: uppercase;
+}">
+        <h>ERROR </h>
     </div>
-</nav>
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 mt-5">
-            <form method="post" th:action="@{/index}">
-                <div class="form-group">
-                    <div><b><p style="font-size:30px">Error</p></b></div>
-                    <div><p style="font-size:24px">An unexpected error has occurred</p></div>
-                </div>
-                <button class="btn btn-primary" type="submit" value="Sign In">Back to home page</button>
-            </form>
+
+
+    <div style="margin-top: 300px">
+        <p style="margin-top:250px;text-align: center;font-size: 30px ;font-family: kanit sans-serif;color: black">
+            Błąd sieci
+        </p>
+    </div>
+    <div style="text-align: center;font-size: 20px ;font-family: kanit sans-serif;color: black">
+        Wykryto nieznany rodzaj błędu!
+    </div>
+    <form method="post" th:action="@{/index}">
+        <div class="col-md-1 mt-5" style="margin-left:845px;bottom: 50px">
+            <button class="btn btn-primary" style="cursor:pointer;background-color: white;border-width: 0" type="submit" value="Sign In">
+                <span style="color: black;text-decoration: underline">Wróć do strony głównej</span>
+            </button>
         </div>
-    </div>
+    </form>
+
+
 </div>
+
+
+
 <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
 <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
 <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>

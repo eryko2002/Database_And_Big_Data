@@ -6,6 +6,7 @@
     background-repeat: repeat;
     display: flex;
     right: 0;
+    position: static;
 }
 body{
     background: rgb(25,12,41);

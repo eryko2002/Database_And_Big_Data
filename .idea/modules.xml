@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/SpringApplication/BDBTGRC09.iml" filepath="$PROJECT_DIR$/SpringApplication/BDBTGRC09.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/PW_BDBT1.iml" filepath="$PROJECT_DIR$/.idea/PW_BDBT1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SpringApplication/SpringApplication.iml" filepath="$PROJECT_DIR$/SpringApplication/SpringApplication.iml" />
     </modules>
   </component>
 </project>

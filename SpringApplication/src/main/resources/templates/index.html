@@ -6,16 +6,16 @@
 
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
 
-    <link rel="stylesheet" href="css/top-bar.css">
-    <link rel="stylesheet" href="css/container-stable.css">
-    <link rel="stylesheet" href="css/image-slides.css">
-    <link rel="stylesheet" href="css/box-info.css">
-    <link rel="stylesheet" href="css/bottom-bar.css">
+    <link rel="stylesheet" href="css/home/top-bar.css">
+    <link rel="stylesheet" href="css/home/container-stable.css">
+    <link rel="stylesheet" href="css/home/image-slides.css">
+    <link rel="stylesheet" href="css/home/box-info.css">
+    <link rel="stylesheet" href="css/home/bottom-bar.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
 
 </head>
-<body style="background-color: antiquewhite">
-<div style="height: 1700px;row-gap: 20px">
+<body style="background-color:antiquewhite">
+<div style="height: 1700px">
 
 <!-- <body th:style="'background: url(/assets/img/img.png) no-repeat center center fixed;'"> -->
 
@@ -37,11 +37,10 @@
             <!-- Kontener po lewej -->
             <nav class="navbar navbar-expand-lg">
             <div class="left-section">
+               <!-- <img th:src="@{logoHOME.png}" alt="Image" > -->
                 <img style="width: 130px;height: 130px;margin-left: 0" src="https://lh5.googleusercontent.com/proxy/dosuu1KUMiFsaBxyKYMj8t9klMTJlV7c7KvAU1G_DCR8JwH3KhaHw6td1NcnqcyvmrenSMZJHIw=w1200-h630-p-k-no-nu" height="60" alt="" class="logo-csc">
+
             </div>
-
-
-
 
             <!-- Kontener po środku -->
                 <div class="middle-section">
@@ -55,28 +54,29 @@
                     </button>
                 </div>
 
-
-
-
-
-
             <!-- Kontener po prawej -->
             <div class="right-section">
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
 
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#" style="background-color: #58839a;color:white;height: 40px;width: 60px;margin-right: 2px">Home
+                        <li class="nav-item active" style="background-color: white">
+                            <a class="nav-link" th:href="@{/index}" style="border-radius:10px;background-color: #58839a;color:white;height: 40px;width: 60px;margin-right: 2px">
+                                <svg xmlns="http://www.w3.org/2000/svg"  style="margin-top:2px;margin-left:12px;align-items: center" width="22" height="22" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+                                    <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+                                </svg>
                                 <span class="sr-only" >(current)</span>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" th:href="@{/main}" style="background-color: #58839a;color:white;height: 40px;width: 60px;margin-right: 2px">Main</a>
+                            <a class="nav-link" th:href="@{/main}" style="text-align:center;border-radius:10px;background-color: #58839a;color:white;height: 40px;width: 60px;margin-right: 2px">
+                                Main
+                            </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" th:href="@{/main}" style="background-color: #58839a;color:white;height: 40px;width: 60px">Login</a></a>
+                            <a class="nav-link" th:href="@{/main}" style="text-align:center;border-radius:10px;background-color: #58839a;color:white;height: 40px;width: 60px">Login</a>
                         </li>
 
                     </ul>
@@ -86,28 +86,6 @@
         </div>
 
 
-
-
-
-
-        <div class="top-bar2">
-            <div style="margin-left: 350px"></div>
-            <div class="top-bar2-contents">
-                <p class="p1">Plan</p>
-            </div>
-            <div class="top-bar2-contents">
-                <p class="p1">Odkrywaj</p>
-            </div>
-            <div class="top-bar2-contents">
-                <p class="p1">Zwierzęta</p>
-            </div>
-            <div class="top-bar2-contents">
-                <p class="p1">Edukacja</p>
-            </div>
-            <div class="top-bar2-contents" style="margin-left: 1px">
-                <p class="p1">Wiadomości</p>
-            </div>
-        </div>
     </div>
 
 
@@ -116,9 +94,77 @@
     <!-- div zawierający kontenery są nieruchome przy przewijaniu ekranu-->
     <div class="container-stable" style="background-color: black">
 
+        <div class="menu-bar">
+            <ul>
+                <div class="menu-stylish">
+                    <li style="margin-top: 25px;font-size: 20px;font-family: Arial"><a href="#">Plan</a>
+                        <div class="sub-menu-l">
+                            <ul>
+                                <li><a href="#">Bilety</a> </li>
+                                <li><a href="#">Godziny</a> </li>
+                                <li><a href="#">Cennik</a> </li>
+                                <li><a href="#">Mapa</a> </li>
+
+                            </ul>
+
+                        </div>
+                    </li>
+                </div>
+
+                <div class="menu-stylish">
+                    <li style="margin-top: 25px;font-size: 20px;font-family: Arial"><a href="#">Wiadomości</a>
+                        <div class="sub-menu-l">
+                            <ul>
+                                <li><a href="#">Społeczność</a> </li>
+                                <li><a href="#">Opiekuni</a> </li>
+                                <li><a href="#">Zatrudnienie</a> </li>
+                                <li><a href="#">Kontakt</a> </li>
+                            </ul>
+                        </div>
+                    </li>
+                </div>
+
+                <div class="menu-stylish">
+                    <li style="margin-top: 25px;font-size: 20px;font-family: Arial"><a href="#">Odkrywaj</a>
+                        <div class="sub-menu-l">
+                            <ul>
+                                <li><a href="#">Jazda tropikalna</a> </li>
+                                <li><a href="#">Afrykańska Sawanna</a> </li>
+                            </ul>
+
+                        </div>
+                    </li>
+                </div>
+                <div class="menu-stylish">
+                    <li style="margin-top: 25px;font-size: 20px;font-family: Arial"><a href="#">Zwierzęta</a>
+                        <div class="sub-menu-l">
+                            <ul>
+                                <li><a href="#">Nasze zwierzęta</a> </li>
+                                <li><a href="#">Okres karmienia</a> </li>
+                                <li><a href="#">Zwierzęta na video</a> </li>
+                            </ul>
+
+                        </div>
+                    </li>
+                </div>
+                <div class="menu-stylish">
+                    <li style="margin-top: 25px;font-size: 20px;font-family: Arial"><a href="#">Edukacja</a>
+                        <div class="sub-menu-l">
+                            <ul>
+                                <li><a href="#">Klimat</a> </li>
+                                <li><a href="#">Edukacja o zwierzętach</a> </li>
+                                <li><a href="#">Program dla młodych</a> </li>
+                            </ul>
+                        </div>
+                    </li>
+                </div>
+
+
+            </ul>
+        </div>
         <!-- div do umieszczenia informacji m.in  o biletach w związku z rezerwacjami-->
         <div class="container-inform1">
-            <p style="text-align: left;font-size: 40px;color: white">
+            <p style="text-align: center;font-size: 40px;color: white">
                 Poznaj nieznane dotąd tajemnice skrywane przez dziką naturę!
             </p>
         </div>
@@ -127,6 +173,7 @@
 
         <!-- div w ktorym będą zamieszczone automatycznie przewijane slajdy zdjęć zwierząt -->
         <div class="container-image-slides">
+
             <!-- slajdy zdjec -->
             <div id="slider">
                 <div>
@@ -178,6 +225,7 @@
 
             </div>
 
+            <!-- div informujący o dostępnych filmikach-->
             <div class="watchVideos">
                 <div>
                     <img class="animalImage-box2" src="https://th.bing.com/th/id/R.776b6d1cd61d0f60c3da4e31d29483fa?rik=F7fJZ0P8vA%2fp5A&riu=http%3a%2f%2fdetroitzoo.org%2fwp-content%2fuploads%2f2015%2f08%2fGrizzly-Boys.jpg&ehk=71qJojanY74dG%2bnPobKKYrvsLv7C%2fcAtxHmOq239lZI%3d&risl=&pid=ImgRaw&r=0">

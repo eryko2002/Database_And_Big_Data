@@ -22,7 +22,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .withUser("admin")
                 .password("admin")
-                .roles("ADMIN");
+                .roles("ADMIN")
+                .and()
+                .withUser("eglab")
+                .password("eglab")
+                .roles("Employee");
     }
 
     @Bean
@@ -39,6 +43,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/main").authenticated()
                 .antMatchers("/main_admin").access("hasRole('ADMIN')")
                 .antMatchers("/main_user").access("hasRole('USER')")
+                .antMatchers("/eglab").access("hasRole('Employee')")
                 .and()
                 .formLogin()
                 .loginPage("/login")
